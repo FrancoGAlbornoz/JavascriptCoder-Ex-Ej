@@ -3,11 +3,32 @@ alert("Producto 1: $5000\n Producto 2: $8500\n Producto 3: $5500\n Producto 4: $
 let productoN=Number(prompt("Ingrese el producto que desea comprar. 0 Para finalizar\n Producto 1:Teclado MarvoScorpion \nProducto 2: Mouse Logitech MX Anyw \nProducto 3: Mouse XPGamer \nProducto 4: Auriculares Gamemax G200 \nProducto 5: Microfono HyperX QuadCast \nProducto 6: Teclado Redragon K552 Kumara"));
 let precioP=0
 let precioT=0
+
 function sumar(){
 
 	precioT=precioT+precioP
 
 }
+
+function desc(){
+	if(precioT>=30000){
+		precioT=precioT*0.15
+		alert("Recibiras un descuento del 15%. Gracias")
+	}
+
+}
+
+
+function promo(){
+	if(precioT>=30000){
+		desc()
+		alert("Recibe promocion");
+	}
+	else{
+		alert("No alcanza para la promocion");
+	}
+}
+
 
 while(productoN != 0){
 
@@ -53,7 +74,9 @@ while(productoN != 0){
 
 
 	sumar();
+	alert("Producto 1: $5000\n Producto 2: $8500\n Producto 3: $5500\n Producto 4: $6000\n Producto 5: $7000\n Producto 6: $9000\n")
 	productoN=Number(prompt("Ingrese el producto que desea comprar. 0 Para finalizarProducto 1:Teclado MarvoScorpion \nProducto 2: Mouse Logitech MX Anyw \nProducto 3: Mouse XPGamer \nProducto 4: Auriculares Gamemax G200 \nProducto 5: Microfono HyperX QuadCast \nProducto 6: Teclado Redragon K552 Kumara"));
 }
 
 alert("El precio total de sus productos es: " +precioT)
+promo();
